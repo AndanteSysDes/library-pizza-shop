@@ -25,15 +25,14 @@ public class Server {
                     System.out.println("A client connected");
                     String message;
                         while ((message = in.readLine()) != null){
-                            System.out.println("Message recieved from client: " + message);
-                                if (message.equalsIgnoreCase("exit")){
-                                    System.out.println(" TEST " + message );
-                                    System.out.println("1");
+
+                            String response = Protocol.respond(message);
+
+                            System.out.println("Message recieved from client: " + response);
+                                if (response.equalsIgnoreCase("exit")){
                                     out.println("Byee");
-                                    System.out.println("2");
                                     return;
                                 }
-                            System.out.println("3");
                         }
                 } catch (IOException e) {
                 System.out.println("Client error " + e.getMessage());

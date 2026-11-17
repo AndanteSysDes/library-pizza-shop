@@ -28,11 +28,14 @@ public class Client {
                     System.out.println("Server error");
                     break;
                 }
+                /*
 
                 if (response.equalsIgnoreCase("Byee")){
 
                     break;
                 }
+
+                 */
 
             }
         } catch (IOException e){
