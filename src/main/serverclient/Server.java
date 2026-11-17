@@ -6,9 +6,14 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
 public class Server {
-    public static void main(String[] args) {
+    public void server() {
+
+
+        Path file = Path.of("messages.txt");
 
         try(ServerSocket serverSocket = new ServerSocket(5000)){
             System.out.println("Server started and waiting for client");
@@ -33,7 +38,17 @@ public class Server {
                                     out.println("Byee");
                                     return;
                                 }
+
+                            Files.writeString(
+                                    file,
+                                    message
+                            );
+
                         }
+
+
+                    System.out.println("Message saved");
+
                 } catch (IOException e) {
                 System.out.println("Client error " + e.getMessage());
             }

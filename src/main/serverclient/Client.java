@@ -8,7 +8,9 @@ import java.net.Socket;
 import java.util.Scanner;
 
 public class Client {
-    public static void main(String[] args) {
+    public void client (String playerName, String result){
+
+
 
         try(Socket socket = new Socket("localhost",5000)) {
             PrintWriter out = new PrintWriter
