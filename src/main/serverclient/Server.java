@@ -30,10 +30,10 @@ public class Server {
                             System.out.println("Message recieved from client: " + input);
 
                                 if (input.equalsIgnoreCase("exit")){
+                                    System.out.println("CLOSING SERVER HERE ");
                                     out.println("Byee");
                                     break;
                                 }
-                            out.println("Ok " + input.toUpperCase());
                         }
                 } catch (IOException e) {
                 System.out.println("Client error " + e.getMessage());
