@@ -17,22 +17,23 @@ public class Client {
                     (new InputStreamReader(socket.getInputStream()));
             Scanner scanner = new Scanner(System.in);
             System.out.println("Connected to the server");
+
             while (true){
                 System.out.println("Write a message");
                 String message = scanner.nextLine();
                 out.println(message);
                 String response = in.readLine();
+
                 if (response == null){
                     System.out.println("Server error");
                     break;
                 }
-                /*
-                if (message.equalsIgnoreCase("exit")){
+
+                if (response.equalsIgnoreCase("Byee")){
 
                     break;
                 }
 
-                 */
             }
         } catch (IOException e){
             System.out.println("Client failed to connect" + e.getMessage());
