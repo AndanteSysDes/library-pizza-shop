@@ -23,7 +23,7 @@ public class Main implements HttpHandler {
 
         server.start();
         System.out.println("Server started");
-        System.out.println("Server running on http://localhost:8080/");
+        System.out.println("Server running on http://localhost:5000/");
 
     }
     @Override
