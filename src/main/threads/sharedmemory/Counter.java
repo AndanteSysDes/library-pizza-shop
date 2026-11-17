@@ -1,14 +1,27 @@
 package main.threads.sharedmemory;
 
-public class Counter {
+import java.util.concurrent.atomic.AtomicInteger;
 
-    private int count = 0;
+public class Counter implements Runnable {
 
-    public synchronized void increment(){
-        count++;
+
+    private final AtomicInteger counter = new AtomicInteger(0);
+
+    // private int count = 0;
+
+    public void increment(){
+        counter.getAndIncrement();
+
     }
 
-    public int getCount(){
-        return count;
+    public  int getCount(){
+        return counter.get();
+    }
+
+    @Override
+    public void run() {
+        for (int i = 0; i < 100_000; i++) {
+            increment();
+        }
     }
 }
