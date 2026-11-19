@@ -22,8 +22,6 @@ public class ClientHandler implements Runnable {
     public void run() {
 
         PrintWriter out = null;
-
-
         String name = "Okänd";
 
         try (Socket client = socket) {
