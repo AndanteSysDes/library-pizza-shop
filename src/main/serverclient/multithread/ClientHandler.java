@@ -35,8 +35,13 @@ public class ClientHandler implements Runnable {
             }
 
             name = userName.trim();
+            // forgot to add
+            clients.add(out);
 
-            System.out.println("Välkommen " + name + " Skriv /quit för att lämna chatten");
+            out.println("Välkommen " + name + " Skriv /quit för att lämna chatten");
+
+            System.out.println(name + " anslöts " +  " Online: " + clients.size());
+
             String userMessage;
 
             while ((userMessage = in.readLine()) != null) {
